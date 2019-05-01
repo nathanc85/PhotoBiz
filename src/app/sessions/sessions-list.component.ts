@@ -2,10 +2,15 @@ import { Component } from "@angular/core";
 
 @Component({
   selector: 'sessions-list',
-  templateUrl: 'sessions-list.component.html'
+  template: `
+  <h1>Scheduled Photosessions</h1>
+  <div>
+    <session-thumbnail [session]='session_value'></session-thumbnail>
+  </div>
+  `
 })
 export class SesssionsListComponent {
-  sessions = {
+  session_value = {
     id: 1,
     name: 'The Smiths',
     date: '02/05/2019',
