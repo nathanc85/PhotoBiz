@@ -14,15 +14,15 @@ import { EmitterVisitorContext } from '@angular/compiler';
         <span>&nbsp;</span>
         <span>{{session.location.city}}, {{session.location.country}}</span>
       </div>
-      <button class="btn btn-primary" (click)='handleClick()'>Click me</button>
     </div>
   `
 })
 export class SessionThumbnailComponent {
   @Input() session: any;
   @Output() sessionClick = new EventEmitter();
+  session_message = 'Session #1';
 
   handleClick() {
-    this.sessionClick.emit(this.session.name);
+    console.log('Clicked');
   }
 } 

@@ -5,10 +5,11 @@ import { Component } from "@angular/core";
   template: `
   <h1>Scheduled Photosessions</h1>
   <div>
-    <session-thumbnail
-      [session]='session_object'
-      (sessionClick)="handleClickedSession($event)">
+    <session-thumbnail #thumbnail
+      [session]='session_object'>
     </session-thumbnail>
+    <div>{{thumbnail.session_message}}</div>
+    <button class="btn btn-primary" (click)='thumbnail.handleClick()'>Click me</button>
   </div>
   `
 })
