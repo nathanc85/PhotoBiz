@@ -5,12 +5,15 @@ import { Component } from "@angular/core";
   template: `
   <h1>Scheduled Photosessions</h1>
   <div>
-    <session-thumbnail [session]='session_value'></session-thumbnail>
+    <session-thumbnail
+      [session]='session_object'
+      (sessionClick)="handleClickedSession($event)">
+    </session-thumbnail>
   </div>
   `
 })
 export class SesssionsListComponent {
-  session_value = {
+  session_object = {
     id: 1,
     name: 'The Smiths',
     date: '02/05/2019',
@@ -23,4 +26,8 @@ export class SesssionsListComponent {
       country: 'US'
     }
   };
+
+  handleClickedSession(data) {
+    console.log('received:', data);
+  }
 }

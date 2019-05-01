@@ -1,4 +1,5 @@
-import { Component, Input } from "@angular/core"
+import { Component, Input, Output, EventEmitter } from "@angular/core"
+import { EmitterVisitorContext } from '@angular/compiler';
 
 @Component({
   selector: 'session-thumbnail',
@@ -18,9 +19,10 @@ import { Component, Input } from "@angular/core"
   `
 })
 export class SessionThumbnailComponent {
-  @Input() session: any
+  @Input() session: any;
+  @Output() sessionClick = new EventEmitter();
 
   handleClick() {
-    console.log("clicked");
+    this.sessionClick.emit(this.session.name);
   }
 } 
