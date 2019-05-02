@@ -3,9 +3,8 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-root',
   template: `
-    <h2>Hello World</h2>
-    <img src="assets/images/basic-shield.png"/>
-    <sessions-list></sessions-list>
+    <app-navbar></app-navbar>
+    <app-sessions-list></app-sessions-list>
   `
 })
 export class AppComponent {
