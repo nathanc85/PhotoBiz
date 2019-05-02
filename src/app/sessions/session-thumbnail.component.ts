@@ -1,8 +1,8 @@
-import { Component, Input, Output, EventEmitter } from "@angular/core"
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { EmitterVisitorContext } from '@angular/compiler';
 
 @Component({
-  selector: 'session-thumbnail',
+  selector: 'app-session-thumbnail',
   template: `
     <div class="well hoverwell thumbnail">
       <div>{{session.name}}</div>
@@ -11,11 +11,19 @@ import { EmitterVisitorContext } from '@angular/compiler';
       <div>\${{session.price}}</div>
       <div>
         <span>{{session.location.address}}</span>
-        <span>&nbsp;</span>
-        <span>{{session.location.city}}, {{session.location.country}}</span>
+        <span class='pad-left'>{{session.location.city}}, {{session.location.country}}</span>
       </div>
     </div>
-  `
+  `,
+  styles: [`
+    .pad-left{
+      margin-left: 10px;
+    }
+
+    .well div {
+      color: #bfb;
+    }
+  `]
 })
 export class SessionThumbnailComponent {
   @Input() session: any;
@@ -25,4 +33,5 @@ export class SessionThumbnailComponent {
   handleClick() {
     console.log('Clicked');
   }
-} 
+}
+

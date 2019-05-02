@@ -1,13 +1,13 @@
-import { Component } from "@angular/core";
+import { Component } from '@angular/core';
 
 @Component({
-  selector: 'sessions-list',
+  selector: 'app-sessions-list',
   template: `
   <h1>Scheduled Photosessions</h1>
   <div>
-    <session-thumbnail #thumbnail
+    <app-session-thumbnail #thumbnail
       [session]='session_object'>
-    </session-thumbnail>
+    </app-session-thumbnail>
     <div>{{thumbnail.session_message}}</div>
     <button class="btn btn-primary" (click)='thumbnail.handleClick()'>Click me</button>
   </div>
