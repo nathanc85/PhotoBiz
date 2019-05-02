@@ -4,11 +4,12 @@ import { Component } from '@angular/core';
   selector: 'app-sessions-list',
   template: `
   <h1>Scheduled Photosessions</h1>
-  <div>
-    <app-session-thumbnail
-      *ngFor='let session_object of session_objects'
+  <div class="row">
+    <div class="col-md-5" *ngFor='let session_object of session_objects'>
+      <app-session-thumbnail
       [session]='session_object'>
-    </app-session-thumbnail>
+      </app-session-thumbnail>
+    </div>
   </div>
   `
 })
@@ -99,11 +100,12 @@ export class SesssionsListComponent {
       time: '9:00 am',
       price: 950.00,
       imageUrl: '/assets/images/ng-nl.png',
-      location: {
-        address: 'The NG-NL Convention Center & Scuba Shop',
-        city: 'Amsterdam',
-        country: 'Netherlands'
-      },
+      // location: {
+      //   address: 'The NG-NL Convention Center & Scuba Shop',
+      //   city: 'Amsterdam',
+      //   country: 'Netherlands'
+      // },
+      onlineUrl: 'http://randomUrl.com',
       sessions: [
         {
           id: 1,
