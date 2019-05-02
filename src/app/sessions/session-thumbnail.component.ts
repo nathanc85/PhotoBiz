@@ -21,17 +21,11 @@ import { EmitterVisitorContext } from '@angular/compiler';
     }
 
     .well div {
-      color: #bfb;
+      color: #bbb;
     }
   `]
 })
 export class SessionThumbnailComponent {
   @Input() session: any;
-  @Output() sessionClick = new EventEmitter();
-  session_message = 'Session #1';
-
-  handleClick() {
-    console.log('Clicked');
-  }
 }
 
