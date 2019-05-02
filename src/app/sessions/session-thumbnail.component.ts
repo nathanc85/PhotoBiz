@@ -7,7 +7,10 @@ import { EmitterVisitorContext } from '@angular/compiler';
     <div class="well hoverwell thumbnail">
       <div>{{session?.name}}</div>
       <div>Date: {{session?.date}}</div>
-      <div [ngSwitch]="session.time">Time: {{session?.time}}
+      <div [ngClass]="getSessionTimeClasses()"
+        [ngStyle]="getSessionTimeStyles()"
+        [ngSwitch]="session.time">
+        Time: {{session?.time}}
         <span *ngSwitchCase="'8:00 am'">(Early)</span>
         <span *ngSwitchCase="'10:00 am'">(Late)</span>
         <span *ngSwitchDefault>(Normal)</span>
@@ -22,6 +25,14 @@ import { EmitterVisitorContext } from '@angular/compiler';
     </div>
   `,
   styles: [`
+    .green{
+      color: green !important;
+    }
+
+    .bold{
+      font-weight: bold;
+    }
+
     .thumbnail{
       min-height:180px;
     }
@@ -35,7 +46,23 @@ import { EmitterVisitorContext } from '@angular/compiler';
     }
   `]
 })
+
 export class SessionThumbnailComponent {
   @Input() session: any;
+
+  getSessionTimeClasses(){
+    if (this.session && this.session.time === '8:00 am') {
+        return ['green', 'bold'];
+    }
+    return [];
+  }
+
+  getSessionTimeStyles(){
+    if (this.session && this.session.time === '10:00 am') {
+      return {color: 'red', 'font-style': 'italic'};
+  }
+  return [];
+  }
+
 }
 
