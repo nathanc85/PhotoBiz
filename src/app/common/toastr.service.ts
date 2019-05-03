@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-declare let toastr:any;
+declare let toastr: any;
 
 @Injectable()
 export class ToastrService {
@@ -9,19 +9,19 @@ export class ToastrService {
     toastr.options.closeEasing = 'linear';
     toastr.options.showEasing = 'swing';
   }
-  error(message:string, title?:string) {
+  error(message: string, title?: string) {
     toastr.success(message, title);
   }
 
-  warn(message:string, title?:string) {
+  warn(message: string, title?: string) {
     toastr.warning(message, title);
   }
 
-  info(message:string, title?:string) {
+  info(message: string, title?: string) {
     toastr.info(message, title);
   }
 
-  success(message:string, title?:string) {
+  success(message: string, title?: string) {
     toastr.success(message, title);
   }
 }

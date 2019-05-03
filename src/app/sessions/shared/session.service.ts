@@ -2,8 +2,12 @@ import { Injectable } from '@angular/core';
 
 @Injectable()
 export class SessionService {
-  getSessions(){
+  getSessions() {
     return PHOTO_SESSIONS;
+  }
+
+  getSession(id: number) {
+    return PHOTO_SESSIONS.find(s => s.id === id);
   }
 }
 

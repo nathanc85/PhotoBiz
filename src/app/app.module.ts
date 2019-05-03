@@ -7,17 +7,22 @@ import { SessionThumbnailComponent } from './sessions/session-thumbnail.componen
 import { NavbarComponent} from './nav/navbar.component';
 import { SessionService } from './sessions/shared/session.service';
 import { ToastrService } from './common/toastr.service';
+import { SessionDetailsComponent } from './sessions/session-details/session-details.component';
+import { RouterModule } from '@angular/router';
+import { appRoutes } from './routes';
 
 @NgModule({
   declarations: [
     AppComponent,
     SesssionsListComponent,
     SessionThumbnailComponent,
+    SessionDetailsComponent,
     NavbarComponent
   ],
   providers: [SessionService, ToastrService],
   imports: [
-    BrowserModule
+    BrowserModule,
+    RouterModule.forRoot(appRoutes)
   ],
   bootstrap: [AppComponent]
 })
