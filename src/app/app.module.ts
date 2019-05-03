@@ -6,6 +6,7 @@ import { SesssionsListComponent } from './sessions/sessions-list.component';
 import { SessionThumbnailComponent } from './sessions/session-thumbnail.component';
 import { NavbarComponent} from './nav/navbar.component';
 import { SessionService } from './sessions/shared/session.service';
+import { ToastrService } from './common/toastr.service';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,7 @@ import { SessionService } from './sessions/shared/session.service';
     SessionThumbnailComponent,
     NavbarComponent
   ],
-  providers: [SessionService],
+  providers: [SessionService, ToastrService],
   imports: [
     BrowserModule
   ],
