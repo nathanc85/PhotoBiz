@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { SesssionsListComponent } from './sessions/sessions-list.component';
 import { SessionThumbnailComponent } from './sessions/session-thumbnail.component';
 import { NavbarComponent} from './nav/navbar.component';
+import { SessionService } from './sessions/shared/session.service';
 
 @NgModule({
   declarations: [
@@ -13,6 +14,7 @@ import { NavbarComponent} from './nav/navbar.component';
     SessionThumbnailComponent,
     NavbarComponent
   ],
+  providers: [SessionService],
   imports: [
     BrowserModule
   ],
