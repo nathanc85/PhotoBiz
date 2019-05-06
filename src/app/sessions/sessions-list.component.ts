@@ -17,7 +17,7 @@ import { ToastrService } from '../common/toastr.service';
   </div>
   `
 })
-export class SesssionsListComponent implements OnInit{
+export class SesssionsListComponent implements OnInit {
   session_objects: any[];
   constructor(private photo_sessions: SessionService, private toastr: ToastrService) {
 
