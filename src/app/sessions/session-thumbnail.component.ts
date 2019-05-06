@@ -4,7 +4,7 @@ import { EmitterVisitorContext } from '@angular/compiler';
 @Component({
   selector: 'app-session-thumbnail',
   template: `
-    <div class="well hoverwell thumbnail">
+    <div [routerLink]="['/sessions', session.id]" class="well hoverwell thumbnail">
       <div>{{session?.name}}</div>
       <div>Date: {{session?.date}}</div>
       <div [ngClass]="getSessionTimeClasses()"

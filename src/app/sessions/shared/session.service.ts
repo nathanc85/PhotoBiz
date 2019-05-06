@@ -320,9 +320,6 @@ export class SessionService {
   }
 
   getSession(id: number) {
-    console.log(id);
-    const photoSession = PHOTO_SESSIONS.find(ses => ses.id === id);
-    console.log(photoSession);
-    return photoSession;
+    return PHOTO_SESSIONS.find(ses => ses.id === id);
   }
 }

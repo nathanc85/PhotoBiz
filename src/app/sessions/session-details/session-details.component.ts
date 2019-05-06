@@ -22,9 +22,6 @@ export class SessionDetailsComponent implements OnInit {
   constructor(private sessionService: SessionService, private route: ActivatedRoute) { }
 
   ngOnInit() {
-    const id_found = +this.route.snapshot.params['id'];
-    console.log(id_found);
-    this.photoSession = this.sessionService.getSession(id_found);
-    //this.photoSession = this.sessionService.getSession(1);
+    this.photoSession = this.sessionService.getSession(+this.route.snapshot.params['id']);
   }
 }
