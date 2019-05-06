@@ -10,6 +10,7 @@ import { ToastrService } from './common/toastr.service';
 import { SessionDetailsComponent } from './sessions/session-details/session-details.component';
 import { RouterModule } from '@angular/router';
 import { appRoutes } from './routes';
+import { CreateSessionComponent } from './sessions/create-session.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { appRoutes } from './routes';
     SesssionsListComponent,
     SessionThumbnailComponent,
     SessionDetailsComponent,
+    CreateSessionComponent,
     NavbarComponent
   ],
   providers: [SessionService, ToastrService],
