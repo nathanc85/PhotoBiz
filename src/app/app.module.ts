@@ -11,6 +11,8 @@ import { SessionDetailsComponent } from './sessions/session-details/session-deta
 import { RouterModule } from '@angular/router';
 import { appRoutes } from './routes';
 import { CreateSessionComponent } from './sessions/create-session.component';
+import { Error404Component } from './errors/404error.component';
+import { SessionRouteActivator } from './sessions/session-details/session-route-activator.service';
 
 @NgModule({
   declarations: [
@@ -19,9 +21,14 @@ import { CreateSessionComponent } from './sessions/create-session.component';
     SessionThumbnailComponent,
     SessionDetailsComponent,
     CreateSessionComponent,
+    Error404Component,
     NavbarComponent
   ],
-  providers: [SessionService, ToastrService],
+  providers: [
+    SessionService,
+    ToastrService,
+    SessionRouteActivator
+  ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(appRoutes)

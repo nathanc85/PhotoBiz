@@ -1,5 +1,16 @@
 import { Injectable } from '@angular/core';
 
+@Injectable()
+export class SessionService {
+  getSessions() {
+    return PHOTO_SESSIONS;
+  }
+
+  getSession(id: number) {
+    return PHOTO_SESSIONS.find(ses => ses.id === id);
+  }
+}
+
 const PHOTO_SESSIONS = [
   {
     id: 1,
@@ -311,15 +322,3 @@ const PHOTO_SESSIONS = [
     ]
   }
 ];
-
-
-@Injectable()
-export class SessionService {
-  getSessions() {
-    return PHOTO_SESSIONS;
-  }
-
-  getSession(id: number) {
-    return PHOTO_SESSIONS.find(ses => ses.id === id);
-  }
-}
