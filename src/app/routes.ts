@@ -7,7 +7,7 @@ import { SessionRouteActivator } from './sessions/session-details/session-route-
 
 export const appRoutes: Routes = [
   {path: 'sessions', component: SesssionsListComponent},
-  {path: 'sessions/new', component: CreateSessionComponent},
+  {path: 'sessions/new', component: CreateSessionComponent, canDeactivate: ['canDeactivateCreateSession']},
   {path: 'sessions/:id', component: SessionDetailsComponent, canActivate: [SessionRouteActivator]},
   {path: '404', component: Error404Component},
   {path: '', redirectTo: '/sessions', pathMatch: 'full'}

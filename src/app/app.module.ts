@@ -27,7 +27,11 @@ import { SessionRouteActivator } from './sessions/session-details/session-route-
   providers: [
     SessionService,
     ToastrService,
-    SessionRouteActivator
+    SessionRouteActivator,
+    {
+      provide: 'canDeactivateCreateSession',
+      useValue: checkIfMoveOn
+    }
   ],
   imports: [
     BrowserModule,
@@ -36,3 +40,9 @@ import { SessionRouteActivator } from './sessions/session-details/session-route-
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+export function checkIfMoveOn(comp: CreateSessionComponent) {
+  if (comp.moveOn) {
+    return window.confirm('Are you sure you want to move on?');
+  }
+}
