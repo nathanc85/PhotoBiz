@@ -4,10 +4,14 @@ import { SessionDetailsComponent } from './sessions/session-details/session-deta
 import { CreateSessionComponent } from './sessions/create-session.component';
 import { Error404Component } from './errors/404error.component';
 import { SessionRouteActivator } from './sessions/session-details/session-route-activator.service';
+import { SessionListResolver } from './sessions/sessions-list-resolver.service';
 
 export const appRoutes: Routes = [
-  {path: 'sessions', component: SesssionsListComponent},
-  {path: 'sessions/new', component: CreateSessionComponent, canDeactivate: ['canDeactivateCreateSession']},
+  {path: 'sessions', component: SesssionsListComponent,
+    resolve: {sessions: SessionListResolver}},
+  {path: 'sessions/new', component: CreateSessionComponent,
+    canDeactivate: ['canDeactivateCreateSession']
+  },
   {path: 'sessions/:id', component: SessionDetailsComponent, canActivate: [SessionRouteActivator]},
   {path: '404', component: Error404Component},
   {path: '', redirectTo: '/sessions', pathMatch: 'full'}

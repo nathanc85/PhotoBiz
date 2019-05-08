@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SessionService } from './shared/session.service';
 import { ToastrService } from '../common/toastr.service';
+import { ActivatedRoute } from '@angular/router';
 
 
 @Component({
@@ -19,12 +20,15 @@ import { ToastrService } from '../common/toastr.service';
 })
 export class SesssionsListComponent implements OnInit {
   session_objects: any[];
-  constructor(private photo_sessions: SessionService, private toastr: ToastrService) {
+  constructor(private photo_sessions: SessionService,
+    private toastr: ToastrService,
+    private route: ActivatedRoute
+  ) {
 
   }
 
   ngOnInit() {
-    this.session_objects = this.photo_sessions.getSessions();
+    this.session_objects = this.route.snapshot.data['sessions'];
   }
 
   handleClickOnSession(session_name) {

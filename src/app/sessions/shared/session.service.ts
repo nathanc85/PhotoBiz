@@ -1,9 +1,15 @@
 import { Injectable } from '@angular/core';
+import { Subject } from 'rxjs';
 
 @Injectable()
 export class SessionService {
   getSessions() {
-    return PHOTO_SESSIONS;
+    let subject = new Subject();
+    setTimeout(() => {
+      subject.next(PHOTO_SESSIONS);
+      subject.complete();
+    }, 2000);
+    return subject;
   }
 
   getSession(id: number) {

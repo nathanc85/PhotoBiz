@@ -13,6 +13,7 @@ import { appRoutes } from './routes';
 import { CreateSessionComponent } from './sessions/create-session.component';
 import { Error404Component } from './errors/404error.component';
 import { SessionRouteActivator } from './sessions/session-details/session-route-activator.service';
+import { SessionListResolver } from './sessions/sessions-list-resolver.service';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { SessionRouteActivator } from './sessions/session-details/session-route-
     SessionService,
     ToastrService,
     SessionRouteActivator,
+    SessionListResolver,
     {
       provide: 'canDeactivateCreateSession',
       useValue: checkIfMoveOn
@@ -45,4 +47,5 @@ export function checkIfMoveOn(comp: CreateSessionComponent) {
   if (comp.moveOn) {
     return window.confirm('Are you sure you want to move on?');
   }
+  return true;
 }
