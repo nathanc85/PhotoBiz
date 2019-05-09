@@ -8,7 +8,7 @@ export class SessionService {
     setTimeout(() => {
       subject.next(PHOTO_SESSIONS);
       subject.complete();
-    }, 2000);
+    }, 1000);
     return subject;
   }
 

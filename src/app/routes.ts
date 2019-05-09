@@ -14,5 +14,6 @@ export const appRoutes: Routes = [
   },
   {path: 'sessions/:id', component: SessionDetailsComponent, canActivate: [SessionRouteActivator]},
   {path: '404', component: Error404Component},
-  {path: '', redirectTo: '/sessions', pathMatch: 'full'}
+  {path: '', redirectTo: '/sessions', pathMatch: 'full'},
+  {path: 'user', loadChildren: './user/user.module#UserModule'}
 ];
